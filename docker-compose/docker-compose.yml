@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: AskWikiBot1234
+
+  bot:
+    image: trigun117/wikipedia-telegram-bot
+    environment:
+      CREATE_TABLE: "yes"
+      DB_SWITCH: "on"
+      TOKEN: "1037297582:AAEZgpqDOWaHIyoX9CWJpn_aJ_hAZwGAVQw"
+      HOST: db
+      PORT: 5432
+      USER: postgres
+      PASSWORD: test
+      DBNAME: postgres
+      SSLMODE: disable
